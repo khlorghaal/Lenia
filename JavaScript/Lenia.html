@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 </script>
 
 <STYLE>
-BODY, TD, TH, .normal { font:12px sans-serif; color:#399; white-space:nowrap; }
+BODY, TD, TH, .normal { font:12px sans-serif; color:#399; background-color:#111; white-space:nowrap; }
 A { color:#36c; }
 A[target=_blank] { background-position:center right; background-repeat:no-repeat; padding-right:13px; background-image:linear-gradient(transparent,transparent),
 	url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Cpath%20fill%3D%22%23fff%22%20stroke%3D%22%2306c%22%20d%3D%22M1.5%204.518h5.982V10.5H1.5z%22%2F%3E%3Cpath%20d%3D%22M5.765%201H11v5.39L9.427%207.937l-1.31-1.31L5.393%209.35l-2.69-2.688%202.81-2.808L4.2%202.544z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M9.995%202.004l.022%204.885L8.2%205.07%205.32%207.95%204.09%206.723l2.882-2.88-1.85-1.852z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E); }  /* from wikipedia */
@@ -38,7 +38,7 @@ TAB { padding-left:20px; }
 HR { height:2px; border:0px; background-color:#9dd; }
 .mainTitle { font:italic 32px serif; color:#09f; }
 .subTitle { font:bold italic 18px serif; color:#09f; }
-.infoText { font:14px sans-serif; color:#036; border:solid 1px #bdf; line-height:1.3em; padding:10px; white-space:normal; 
+.infoText { font:14px sans-serif; color:#399; border:solid 1px #bdf; line-height:1.3em; padding:10px; white-space:normal; 
 		width:550px; height:400px; overflow:auto; }
 .status { font:12px sans-serif; color:#09f; white-space:normal; }
 .codeName { font:18px serif; }
@@ -52,34 +52,34 @@ HR { height:2px; border:0px; background-color:#9dd; }
 .gif { border:solid 1px #ddf; }
 .stat { border:solid 1px #beb; cursor:pointer; }
 .val { padding-left:10px; padding-right:10px; width:60px; }
-.num, .val { font:14px monospace; color:#369; }
-.num { background-color:#eef; padding:0 3px; }
+.num, .val { font:14px monospace; color:#eee; }
+.num { background-color:#222; padding:0 3px; }
 /*HTML, BODY, .scrollOut { height:100%; }
 .scrollIn { height:100%; overflow:auto; }*/
-.animalWindow { font:12px sans-serif; color:#369; background-color:#fff; border:solid 1px #fcf; padding:0px;
+.animalWindow { font:12px sans-serif; color:#09f; background-color:#222; border:solid 1px #000; padding:0px;
 		width:400px; height:250px; overflow:auto; }
 UL.animalList, UL.animalList UL { padding-left:10px; }
 UL.animalList LI { list-style-type:none; position:relative; }
-UL.animalList LI.group > DIV { font-weight:bold; background-color:#fef; border-bottom:solid 2px #fbf; padding-top:0.2em; }
+UL.animalList LI.group > DIV {font-weight:bold;background-color:#fbf3;border-bottom:solid 2px #e0e;padding-top:0.2em;}
 UL.animalList LI.closed > DIV { background-color:#fcf; border-bottom:solid 2px #e9e; }
 UL.animalList LI.closed > UL { display:none; }
 UL.animalList LI.group > DIV:before { content:'[−] '; }
 UL.animalList LI.closed > DIV:before { content:'[+] '; }
 UL.animalList LI.group > DIV:hover { background-color:#cef !important; }
 UL.animalList LI.action:hover,
-UL.animalList LI.closed > DIV:hover { background-color:#6cf !important; }
+UL.animalList LI.closed > DIV:hover { background-color:#111 !important; }
 UL.animalList LI.action, UL.animalList LI.group > DIV { cursor:pointer; }
-UL.animalList LI.selected { background-color:#39c; color:#fff; }
+UL.animalList LI.selected { background-color:#000; color:#f0f; }
 .layerSt { color:#bdf; }
 IMG.catImg { border:0px; zoom:50%; -moz-transform:scale(0.5); opacity:0.4; filter:alpha(opacity=40); cursor:pointer; }
 IMG.catImg:hover { opacity:1; filter:none; }
-INPUT[type=button] { font:12px sans-serif; padding:.2em .5em; border:none; border-radius:2px; background-color:#ddd; }
+INPUT[type=button] { font:12px sans-serif; color:#000; padding:.2em .5em; border:none; border-radius:2px; background-color:#777; }
 INPUT[type=button].btnOption { }
-INPUT[type=button].btnRun { background-color:#afd; }
-INPUT[type=button].btnField { background-color:#adf; }
-INPUT[type=button].btnSoliton { background-color:#fcf; }
-INPUT[type=button].btnDisplay { background-color:#dda; }
-INPUT[type=button].btnHigh { background-color:#daf; font-weight:bold; }
+INPUT[type=button].btnRun { background-color:#0f9; }
+INPUT[type=button].btnField { background-color:#0cf; }
+INPUT[type=button].btnSoliton { background-color:#f6f; }
+INPUT[type=button].btnDisplay { background-color:#cb8; }
+INPUT[type=button].btnHigh { background-color:#f3f; font-weight:bold; }
 INPUT[type=button].btnCenterOn, INPUT[type=button].btnAddOn, INPUT[type=button].btnMirrorOn, INPUT[type=button].btnCollideOn, INPUT[type=button].btnGIFOn { background-color:#faa; }
 INPUT[type=button].btnInfo { font-weight:bold; cursor:default; }
 INPUT[type=button].btnKey { background-color:#eee; border:solid 1px #bbb; border-radius:5px; padding:.1em .4em; box-shadow:.2em .2em .2em rgba(0,0,0,.1); }
@@ -92,8 +92,8 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 .frac > sub { display:block; font:inherit; }
 .frac > span { display:none; }
 .cubeTable TD { width:20px; font:8px sans-serif; color:#666; text-align:center; }
-.cubeCell { width:20px; font:8px sans-serif; color:#666; text-align:center; background-color:#eee; border:solid 2px #fff; cursor:pointer; }
-.cubeEmpty { background-color:#fff; }
+.cubeCell { width:20px; font:8px sans-serif; color:#666; text-align:center; background-color:#ddd; border:solid 2px #111; cursor:pointer; }
+.cubeEmpty {  }
 .cubeExist { background-color:#5df !important; }
 .cubeNonExist { background-color:#fd5 !important; }
 .cubeBorder { border:solid 2px #ccc; }
@@ -166,22 +166,22 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	<tr><td width=150>
 		<input type="button" value="+" class="btnAddOff" title="Increase center of delta function (Q or keypad 7)" onclick="actionKey='Q';this.blur();">
 		<input type="button" value="−" class="btnAddOff" title="Decrease center of delta function (A or keypad 4)" onclick="actionKey='A';this.blur();">
-		&nbsp; $\color{blue}\mu$ = <span id="txt_c" class="num"></span>
+		&nbsp; $\color{#09f}\mu$ = <span id="txt_c" class="num"></span>
 	</td><td width=250 colspan=2>
 		<input type="button" value="+" title="Increase space resolution ([shift] R or keypad +)" onclick="actionKey='R';this.blur();">
 		<input type="button" value="−" title="Decrease space resolution ([shift] F or keypad -)" onclick="actionKey='F';this.blur();">
-		&nbsp; $\color{blue}R$ = <span id="txt_R" class="num"></span> cells per kernel radius</i>
+		&nbsp; $\color{#09f}R$ = <span id="txt_R" class="num"></span> cells per kernel radius</i>
 	</td><td width=250>
 		Field: <span id="txt_size" class="num"></span> cells, each <span id="txt_pixel" class="num"></span> pixels
 
 	</td></tr><tr><td>
 		<input type="button" value="+" class="btnAddOff" title="Increase width of delta function (W or keypad 8)" onclick="actionKey='W';this.blur();">
 		<input type="button" value="−" class="btnAddOff" title="Decrease width of delta function (S or keypad 5)" onclick="actionKey='S';this.blur();">
-		&nbsp; $\color{blue}\sigma$ = <span id="txt_w" class="num"></span>
+		&nbsp; $\color{#09f}\sigma$ = <span id="txt_w" class="num"></span>
 	</td><td colspan=2>
 		<input type="button" value="+" title="Dilute time (T or keypad *)" onclick="actionKey='T';this.blur();">
 		<input type="button" value="−" title="Concentrate time (G or keypad /)" onclick="actionKey='G';this.blur();">
-		&nbsp; $\color{blue}T$ = <span id="txt_ts" class="num"></span> steps per unit time</i>
+		&nbsp; $\color{#09f}T$ = <span id="txt_ts" class="num"></span> steps per unit time</i>
 	</td><td>
 		CPU: <span id="txt_fps" class="num"></span> fps
 
@@ -199,10 +199,10 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 		<input type="button" value="−" class="btnAddOff" title="Decrease peak height 3 (K)" onclick="actionKey='K';this.blur();">
 		<input type="button" value="−" class="btnAddOff" title="Decrease peak height 4 (L)" onclick="actionKey='L';this.blur();">
 	</td><td>
-		&nbsp; $\color{blue}{\beta}$ = <span id="txt_B" class="num"></span><br>
-		&nbsp; $\color{blue}{\eta}$ = <span id="txt_E" class="num"></span>
+		&nbsp; $\color{#09f}{\beta}$ = <span id="txt_B" class="num"></span><br>
+		&nbsp; $\color{#09f}{\eta}$ = <span id="txt_E" class="num"></span>
 	</td><td width=120>
-		$\color{blue}{\Delta t}$ = <span id="txt_dt" class="num"></span> $\mu s$<br>
+		$\color{#09f}{\Delta t}$ = <span id="txt_dt" class="num"></span> $\mu s$<br>
 		$t$ = <span id="txt_t" class="num"></span> $\mu s$
 
 	</td></tr></table>
@@ -369,7 +369,7 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	<br>
 	<table cellpadding=3 cellspacing=0>
 	<tr><td>Run:</td><td>
-	<input type="button" class="btnRun" value="Start/Stop" title="Start/stop running ([shift] Enter)" onclick="actionKey=ENTER;this.blur();"> &nbsp;
+	<input type="button" class="btnRun" value="&#x23efStart/Stop" title="Start/stop running ([shift] Enter)" onclick="actionKey=ENTER;this.blur();"> &nbsp;
 	<input type="button" class="btnRun" value="Once" title="Run one step only (Space)" onclick="actionKey=SPACE;this.blur();"> &nbsp;
 
 	</td></tr><tr><td>Preset:</td><td>
@@ -467,7 +467,7 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	<br>
 	<hr>
 	<u>Field transition</u>: <!--<b>additive</b> <i></i>--><br>
-	<tab/>$\displaystyle \Delta \color{magenta}f(\mathbf x) = \color{magenta}d(\color{magenta}{k \ast f}(\mathbf x)) \cdot \color{blue}{\Delta t}$<br>
+	<tab/>$\displaystyle \Delta \color{magenta}f(\mathbf x) = \color{magenta}d(\color{magenta}{k \ast f}(\mathbf x)) \cdot \color{#09f}{\Delta t}$<br>
 	<!--$\displaystyle f_{t+\Delta t}(\mathbf x) = f_t(\mathbf x) + \Delta t \cdot d(n(\mathbf x))$<br>-->
 
 	</td></tr><tr><td>
@@ -483,36 +483,36 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 
 	</td></tr><tr><td>
 	<u>Delta function</u>: <input type="button" class="btnRun" value="Switch" title="Switch delta function (alt+Q)" onclick="actionKey=ALT+'Q';this.blur();">
-	<span id="nameD_gaus" style="display:none"><b>Gaussian</b> <i>(center $\color{blue}\mu$, standard deviation $\color{blue}\sigma$)</i></span>
-	<span id="nameD_quad4" style="display:none"><b>polynomial</b> <i>(center $\color{blue}\mu$, lower width $3\color{blue}\sigma$, raised to the power $\color{blue}\alpha$)</i></span>
-	<span id="nameD_trap" style="display:none"><b>trapezoidal</b> <i>(center $\color{blue}\mu$, upper width $\color{blue}\sigma$, lower width $4\color{blue}\sigma$)</i></span>
-	<span id="nameD_stpz" style="display:none"><b>step</b> <i>(center $\color{blue}\mu$, width $2\color{blue}\sigma$)</i></span>
-	<!--<span id="nameD_bimo4" style="display:none"><b>bimodal polynomial</b> <i>(raised to the power $\color{blue}\alpha$)</i></span>-->
+	<span id="nameD_gaus" style="display:none"><b>Gaussian</b> <i>(center $\color{#09f}\mu$, standard deviation $\color{#09f}\sigma$)</i></span>
+	<span id="nameD_quad4" style="display:none"><b>polynomial</b> <i>(center $\color{#09f}\mu$, lower width $3\color{#09f}\sigma$, raised to the power $\color{#09f}\alpha$)</i></span>
+	<span id="nameD_trap" style="display:none"><b>trapezoidal</b> <i>(center $\color{#09f}\mu$, upper width $\color{#09f}\sigma$, lower width $4\color{#09f}\sigma$)</i></span>
+	<span id="nameD_stpz" style="display:none"><b>step</b> <i>(center $\color{#09f}\mu$, width $2\color{#09f}\sigma$)</i></span>
+	<!--<span id="nameD_bimo4" style="display:none"><b>bimodal polynomial</b> <i>(raised to the power $\color{#09f}\alpha$)</i></span>-->
 	<br>
 	<div id="eqD_gaus" style="display:none">
-	<tab/>$\displaystyle \color{magenta}d(n) = 2 e^{- \ell^2/k} - 1 \quad \text{where } \ell=|n-\color{blue}\mu|, k=2\color{blue}\sigma^2$</div>
+	<tab/>$\displaystyle \color{magenta}d(n) = 2 e^{- \ell^2/k} - 1 \quad \text{where } \ell=|n-\color{#09f}\mu|, k=2\color{#09f}\sigma^2$</div>
 	<div id="eqD_quad4" style="display:none">
 	<tab/>$\displaystyle \color{magenta}d(n) = \begin{cases}
-		2 \left( 1 - \ell^2/k^2 \right)^\color{blue}\alpha - 1 & \quad \text{if } \ell \leq k \\
+		2 \left( 1 - \ell^2/k^2 \right)^\color{#09f}\alpha - 1 & \quad \text{if } \ell \leq k \\
 		-1 & \quad \text{otherwise}
-	\end{cases} \quad \text{where } \ell=|n-\color{blue}\mu|, k=3\color{blue}\sigma$</div>
+	\end{cases} \quad \text{where } \ell=|n-\color{#09f}\mu|, k=3\color{#09f}\sigma$</div>
 	<div id="eqD_trap" style="display:none">
 	<tab/>$\displaystyle \color{magenta}d(n) = \begin{cases}
 		1 & \quad \text{if } \ell \leq p\\
 		2 \cdot \frac{q-\ell}{q-p} - 1 & \quad \text{if } p \leq \ell \leq q\\
 		-1 & \quad \text{otherwise}
-	\end{cases} \quad \text{where } \ell=|n-\color{blue}\mu|, p=\color{blue}\sigma/2, q=2\color{blue}\sigma$</div>
+	\end{cases} \quad \text{where } \ell=|n-\color{#09f}\mu|, p=\color{#09f}\sigma/2, q=2\color{#09f}\sigma$</div>
 	<div id="eqD_stpz" style="display:none">
 	<tab/>$\displaystyle \color{magenta}d(n) = \begin{cases}
-		1 & \quad \text{if } \ell \leq \color{blue}\sigma\\
+		1 & \quad \text{if } \ell \leq \color{#09f}\sigma\\
 		-1 & \quad \text{otherwise}
-	\end{cases} \quad \text{where } \ell=|n-\color{blue}\mu|$</div>
+	\end{cases} \quad \text{where } \ell=|n-\color{#09f}\mu|$</div>
 	<!--
 	<div id="eqD_bimo4" style="display:none">
 	<tab/>$\displaystyle \color{magenta}d(n) = \begin{cases}
-		2 \left( 1 - (\delta / \color{blue}\sigma - 1)^2 \right)^\color{blue}\alpha - 1 & \quad \text{if } \delta \leq k \\
+		2 \left( 1 - (\delta / \color{#09f}\sigma - 1)^2 \right)^\color{#09f}\alpha - 1 & \quad \text{if } \delta \leq k \\
 		-1 & \quad \text{otherwise}
-	\end{cases} \quad \text{where } \delta=|n-\color{blue}\mu|, k=2\color{blue}\sigma^2$</div>
+	\end{cases} \quad \text{where } \delta=|n-\color{#09f}\mu|, k=2\color{#09f}\sigma^2$</div>
 	-->
 	<script>
 	var deltaID = 0;
@@ -559,30 +559,30 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	</td></tr><tr><td>
 	<u>Kernel layer function</u>: <input type="button" class="btnRun" value="Switch" title="Switch kernel layer function (alt+W)" onclick="actionKey=ALT+'W';this.blur();">
 	<span id="nameL_unmo" style="display:none"><b>unimodal</b></span>
-	<span id="nameL_bimo" style="display:none"><b>bimodal</b> <i>(peak height $\color{blue}{\beta_{1..2}}$)</i></span>
-	<span id="nameL_trmo" style="display:none"><b>trimodal</b> <i>(peak height $\color{blue}{\beta_{1..3}}$)</i></span>
-	<span id="nameL_temo" style="display:none"><b>tetramodal</b> <i>(peak height $\color{blue}{\beta_{1..4}}$)</i></span>
+	<span id="nameL_bimo" style="display:none"><b>bimodal</b> <i>(peak height $\color{#09f}{\beta_{1..2}}$)</i></span>
+	<span id="nameL_trmo" style="display:none"><b>trimodal</b> <i>(peak height $\color{#09f}{\beta_{1..3}}$)</i></span>
+	<span id="nameL_temo" style="display:none"><b>tetramodal</b> <i>(peak height $\color{#09f}{\beta_{1..4}}$)</i></span>
 	<input type="button" class="btnAddOff" value="Random" title="Random peak heights (Semicolon(;))" onclick="actionKey=SEMICOLON;this.blur();">
 	<br>
 	<div id="eqL_unmo" style="display:none">
 	<tab/>$\displaystyle \color{magenta}k(\mathbf u) = \color{magenta}c(r) \quad \text{where } r=|\mathbf u|$</div>
 	<div id="eqL_bimo" style="display:none">
 	<tab/>$\displaystyle \color{magenta}k(\mathbf u) = \begin{cases}
-		\color{blue}{\beta_1} \cdot \color{magenta}c(2r)     & \quad \text{if } r \le 1/2\\
-		\color{blue}{\beta_2} \cdot \color{magenta}c(2r - 1) & \quad \text{if } 1/2 \le r \le 1
+		\color{#09f}{\beta_1} \cdot \color{magenta}c(2r)     & \quad \text{if } r \le 1/2\\
+		\color{#09f}{\beta_2} \cdot \color{magenta}c(2r - 1) & \quad \text{if } 1/2 \le r \le 1
 	\end{cases} \quad \text{where } r=|\mathbf u|$</div>
 	<div id="eqL_trmo" style="display:none">
 	<tab/>$\displaystyle \color{magenta}k(\mathbf u) = \begin{cases}
-		\color{blue}{\beta_1} \cdot \color{magenta}c(3r)     & \quad \text{if } r \le 1/3\\
-		\color{blue}{\beta_2} \cdot \color{magenta}c(3r - 1) & \quad \text{if } 1/3 \le r \le 2/3\\
-		\color{blue}{\beta_3} \cdot \color{magenta}c(3r - 2) & \quad \text{if } 2/3 \le r \le 1
+		\color{#09f}{\beta_1} \cdot \color{magenta}c(3r)     & \quad \text{if } r \le 1/3\\
+		\color{#09f}{\beta_2} \cdot \color{magenta}c(3r - 1) & \quad \text{if } 1/3 \le r \le 2/3\\
+		\color{#09f}{\beta_3} \cdot \color{magenta}c(3r - 2) & \quad \text{if } 2/3 \le r \le 1
 	\end{cases} \quad \text{where } r=|\mathbf u|$</div>
 	<div id="eqL_temo" style="display:none">
 	<tab/>$\displaystyle \color{magenta}k(\mathbf u) = \begin{cases}
-		\color{blue}{\beta_1} \cdot \color{magenta}c(4r)     & \quad \text{if } r \le 1/4\\
-		\color{blue}{\beta_2} \cdot \color{magenta}c(4r - 1) & \quad \text{if } 1/4 \le r \le 2/4\\
-		\color{blue}{\beta_3} \cdot \color{magenta}c(4r - 2) & \quad \text{if } 2/4 \le r \le 3/4\\
-		\color{blue}{\beta_4} \cdot \color{magenta}c(4r - 3) & \quad \text{if } 3/4 \le r \le 1
+		\color{#09f}{\beta_1} \cdot \color{magenta}c(4r)     & \quad \text{if } r \le 1/4\\
+		\color{#09f}{\beta_2} \cdot \color{magenta}c(4r - 1) & \quad \text{if } 1/4 \le r \le 2/4\\
+		\color{#09f}{\beta_3} \cdot \color{magenta}c(4r - 2) & \quad \text{if } 2/4 \le r \le 3/4\\
+		\color{#09f}{\beta_4} \cdot \color{magenta}c(4r - 3) & \quad \text{if } 3/4 \le r \le 1
 	\end{cases} \quad \text{where } r=|\mathbf u|$</div>
 	<script>
 	var layerID = 0;
@@ -618,18 +618,18 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 
 	</td></tr><tr><td>
 	<u>Kernel core function</u>: <input type="button" class="btnRun" value="Switch" title="Switch kernel core function (alt+E)" onclick="actionKey=ALT+'E';this.blur();">
-	<span id="nameC_bump4" style="display:none"><b>Gaussian bump</b> <i>(raised to the power $\color{blue}\alpha$)</i></span>
-	<span id="nameC_quad4" style="display:none"><b>polynomial</b> <i>(raised to the power $\color{blue}\alpha$)</i></span>
-	<!--<span id="nameC_cosp4" style="display:none"><b>cosine</b> <i>(raised to the power $\color{blue}\alpha$)</i></span>-->
+	<span id="nameC_bump4" style="display:none"><b>Gaussian bump</b> <i>(raised to the power $\color{#09f}\alpha$)</i></span>
+	<span id="nameC_quad4" style="display:none"><b>polynomial</b> <i>(raised to the power $\color{#09f}\alpha$)</i></span>
+	<!--<span id="nameC_cosp4" style="display:none"><b>cosine</b> <i>(raised to the power $\color{#09f}\alpha$)</i></span>-->
 	<span id="nameC_trap1/5" style="display:none"><b>trapezoidal</b> <i>(5 equal portions)</i></span>
 	<span id="nameC_stpz1/4" style="display:none"><b>step</b> <i>(for SmoothLife, outer radius = inner radius &times; 3)</i></span>
 	<span id="nameC_life" style="display:none"><b>high step</b> <i>(for Conway's Game of Life)</i></span>
 	<!--<span id="nameC_life2" style="display:none"><b>high Gaussian</b> <i>()</i></span>-->
 	<br>
 	<div id="eqC_bump4" style="display:none">
-	<tab/>$\displaystyle \color{magenta}c(r) = e^{\color{blue}\alpha ( 1 - 1 / k )} \quad \text{where } k=4 r (1-r)$</div>
+	<tab/>$\displaystyle \color{magenta}c(r) = e^{\color{#09f}\alpha ( 1 - 1 / k )} \quad \text{where } k=4 r (1-r)$</div>
 	<div id="eqC_quad4" style="display:none">
-	<tab/>$\displaystyle \color{magenta}c(r) = k^\color{blue}\alpha \quad \text{where } k=4 r (1-r)$</div>
+	<tab/>$\displaystyle \color{magenta}c(r) = k^\color{#09f}\alpha \quad \text{where } k=4 r (1-r)$</div>
 	<div id="eqC_trap1/5" style="display:none">
 	<tab/>$\displaystyle \color{magenta}c(r) = \begin{cases}
 		(r-q) / q & \quad \text{if } q \leq r \leq 2q\\
@@ -650,7 +650,7 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	\end{cases} \quad \text{where } q=1/4$</div>
 	<!--
 	<div id="eqK_cosp4" style="display:none">
-	<tab/>$\displaystyle k(\mathbf u) = | \cos^\color{blue}\alpha (\pi r + \pi/2)| \quad \text{where } r=|\mathbf u|$</div>
+	<tab/>$\displaystyle k(\mathbf u) = | \cos^\color{#09f}\alpha (\pi r + \pi/2)| \quad \text{where } r=|\mathbf u|$</div>
 	-->
 	<script>
 	var coreID = 0;
@@ -672,7 +672,7 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	<tr><td width=150>
 		<input type="button" value="+" title="Increase stiffness of kernel core function" onclick="actionKey=INT+1;this.blur();">
 		<input type="button" value="−" title="Decrease stiffness of kernel core function" onclick="actionKey=INT+2;this.blur();">
-		&nbsp; $\color{blue}\alpha$ = <span id="txt_A" class="num"></span>
+		&nbsp; $\color{#09f}\alpha$ = <span id="txt_A" class="num"></span>
 	</td></tr></table>
 
 	</td></tr><tr><td>
@@ -735,26 +735,26 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	</td><td>
 		Stats axes:<br><br>
 		<table cellpadding=0 cellspacing=0>
-		<tr><td><input type="checkbox" id="cb0"  onclick="StatCheckBox()"></td><td>$\color{black}m$</td><td>Mass</td></tr>
-		<tr><td><input type="checkbox" id="cb1"  onclick="StatCheckBox()"></td><td>$\color{black}g$</td><td>Growth</td></tr>
-		<tr><td><input type="checkbox" id="cb2"  onclick="StatCheckBox()"></td><td>$\color{black}V$</td><td>Mass volume</td></tr>
-		<tr><td><input type="checkbox" id="cb3"  onclick="StatCheckBox()"></td><td>$\color{black}{V_g}$</td><td>Growth volume</td></tr>
-		<tr><td><input type="checkbox" id="cb4"  onclick="StatCheckBox()"></td><td>$\color{black}\rho$</td><td>Mass density</td></tr>
-		<tr><td><input type="checkbox" id="cb5"  onclick="StatCheckBox()"></td><td>$\color{black}{\rho_g}$</td><td>Growth density</td></tr>
-		<tr><td><input type="checkbox" id="cb6"  onclick="StatCheckBox()"></td><td>$\color{black}s$</td><td>Centroid speed</td></tr>
-		<tr><td><input type="checkbox" id="cb7"  onclick="StatCheckBox()"></td><td>$\color{black}{d_g}$</td><td>Growth-centroid distance</td></tr>
-		<tr><td><input type="checkbox" id="cb8"  onclick="StatCheckBox()"></td><td>$\color{black}\omega$</td><td>Centroid rotate speed</td></tr>
-		<tr><td><input type="checkbox" id="cb9"  onclick="StatCheckBox()"></td><td>$\color{black}{\omega_g}$</td><td>Growth-centroid rotate speed</td></tr>
-		<tr><td><input type="checkbox" id="cb10" onclick="StatCheckBox()"></td><td>$\color{black}{\omega_\theta}$</td><td>Major axis rotate speed</td></tr>
-		<tr><td><input type="checkbox" id="cb11" onclick="StatCheckBox()"></td><td>$\color{black}I$</td><td>Moment of inertia &sim; Hu's 1</td></tr>
-		<tr><td><input type="checkbox" id="cb12" onclick="StatCheckBox()"></td><td>$\color{black}\gamma$</td><td>Skewness &sim; Hu's 4</td></tr>
-		<tr><td><input type="checkbox" id="cb13" onclick="StatCheckBox()"></td><td>$\color{black}{\phi_5}$</td><td>Hu's 5</td></tr>
-		<tr><td><input type="checkbox" id="cb14" onclick="StatCheckBox()"></td><td>$\color{black}{\phi_6}$</td><td>Hu's 6</td></tr>
-		<tr><td><input type="checkbox" id="cb15" onclick="StatCheckBox()"></td><td>$\color{black}{\phi_7}$</td><td>Hu's 7</td></tr>
-		<tr><td><input type="checkbox" id="cb16" onclick="StatCheckBox()"></td><td>$\color{black}\kappa$</td><td>Kurtosis &sim; Flusser's 7</td></tr>
-		<tr><td><input type="checkbox" id="cb17" onclick="StatCheckBox()"></td><td>$\color{black}{\psi_8}$</td><td>Flusser's 8</td></tr>
-		<tr><td><input type="checkbox" id="cb18" onclick="StatCheckBox()"></td><td>$\color{black}{\psi_9}$</td><td>Flusser's 9</td></tr>
-		<tr><td><input type="checkbox" id="cb19" onclick="StatCheckBox()"></td><td>$\color{black}{\psi_{10}}$</td><td>Flusser's 10</td></tr>
+		<tr><td><input type="checkbox" id="cb0"  onclick="StatCheckBox()"></td><td>$\color{grey}m$</td><td>Mass</td></tr>
+		<tr><td><input type="checkbox" id="cb1"  onclick="StatCheckBox()"></td><td>$\color{grey}g$</td><td>Growth</td></tr>
+		<tr><td><input type="checkbox" id="cb2"  onclick="StatCheckBox()"></td><td>$\color{grey}V$</td><td>Mass volume</td></tr>
+		<tr><td><input type="checkbox" id="cb3"  onclick="StatCheckBox()"></td><td>$\color{grey}{V_g}$</td><td>Growth volume</td></tr>
+		<tr><td><input type="checkbox" id="cb4"  onclick="StatCheckBox()"></td><td>$\color{grey}\rho$</td><td>Mass density</td></tr>
+		<tr><td><input type="checkbox" id="cb5"  onclick="StatCheckBox()"></td><td>$\color{grey}{\rho_g}$</td><td>Growth density</td></tr>
+		<tr><td><input type="checkbox" id="cb6"  onclick="StatCheckBox()"></td><td>$\color{grey}s$</td><td>Centroid speed</td></tr>
+		<tr><td><input type="checkbox" id="cb7"  onclick="StatCheckBox()"></td><td>$\color{grey}{d_g}$</td><td>Growth-centroid distance</td></tr>
+		<tr><td><input type="checkbox" id="cb8"  onclick="StatCheckBox()"></td><td>$\color{grey}\omega$</td><td>Centroid rotate speed</td></tr>
+		<tr><td><input type="checkbox" id="cb9"  onclick="StatCheckBox()"></td><td>$\color{grey}{\omega_g}$</td><td>Growth-centroid rotate speed</td></tr>
+		<tr><td><input type="checkbox" id="cb10" onclick="StatCheckBox()"></td><td>$\color{grey}{\omega_\theta}$</td><td>Major axis rotate speed</td></tr>
+		<tr><td><input type="checkbox" id="cb11" onclick="StatCheckBox()"></td><td>$\color{grey}I$</td><td>Moment of inertia &sim; Hu's 1</td></tr>
+		<tr><td><input type="checkbox" id="cb12" onclick="StatCheckBox()"></td><td>$\color{grey}\gamma$</td><td>Skewness &sim; Hu's 4</td></tr>
+		<tr><td><input type="checkbox" id="cb13" onclick="StatCheckBox()"></td><td>$\color{grey}{\phi_5}$</td><td>Hu's 5</td></tr>
+		<tr><td><input type="checkbox" id="cb14" onclick="StatCheckBox()"></td><td>$\color{grey}{\phi_6}$</td><td>Hu's 6</td></tr>
+		<tr><td><input type="checkbox" id="cb15" onclick="StatCheckBox()"></td><td>$\color{grey}{\phi_7}$</td><td>Hu's 7</td></tr>
+		<tr><td><input type="checkbox" id="cb16" onclick="StatCheckBox()"></td><td>$\color{grey}\kappa$</td><td>Kurtosis &sim; Flusser's 7</td></tr>
+		<tr><td><input type="checkbox" id="cb17" onclick="StatCheckBox()"></td><td>$\color{grey}{\psi_8}$</td><td>Flusser's 8</td></tr>
+		<tr><td><input type="checkbox" id="cb18" onclick="StatCheckBox()"></td><td>$\color{grey}{\psi_9}$</td><td>Flusser's 9</td></tr>
+		<tr><td><input type="checkbox" id="cb19" onclick="StatCheckBox()"></td><td>$\color{grey}{\psi_{10}}$</td><td>Flusser's 10</td></tr>
 		</table>
 	</td></tr></table>
 
@@ -766,32 +766,32 @@ CANVAS, IMG { image-rendering: pixelated; image-rendering: optimizeSpeed;
 	<br>
 	<div class="scrollIn">
 	<table cellpadding=0 cellspacing=0>
-	<tr id="s_tr0" ><td><canvas id="stat0"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val0"  class="val"></div></td><td>Mass (log scale)<br><tab/>$\color{black}m = \sum f(\mathbf x) / R^2 \quad [\mu g]$</td></tr>
-	<tr id="s_tr1" ><td><canvas id="stat1"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val1"  class="val"></div></td><td>Growth (log scale)<br><tab/>$\color{black}g = \sum_{d>0} d(n(\mathbf x)) / R^2 \quad [\mu g / \mu s]$</td></tr>
-	<tr id="s_tr2" ><td><canvas id="stat2"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val2"  class="val"></div></td><td>Mass volume (log scale)<br><tab/>$\color{black}V = \sum_{f>0} 1 / R^2 \quad [\mu m^2]$</td></tr>
-	<tr id="s_tr3" ><td><canvas id="stat3"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val3"  class="val"></div></td><td>Growth volume (log scale)<br><tab/>$\color{black}{V_g} = \sum_{d>0} 1 / R^2 \quad [\mu m^2]$</td></tr>
-	<tr id="s_tr4" ><td><canvas id="stat4"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val4"  class="val"></div></td><td>Mass density<br><tab/>$\color{black}\rho = m / V \quad [\mu g / \mu m^2]$</td></tr>
-	<tr id="s_tr5" ><td><canvas id="stat5"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val5"  class="val"></div></td><td>Growth density<br><tab/>$\color{black}{\rho_g} = g / V_g \quad [\mu g / (\mu m^2 \cdot \mu s)]$</td></tr>
-	<tr id="s_tr6" ><td><canvas id="stat6"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val6"  class="val"></div></td><td>Centroid speed <span style="color:#f70">&#9679;&rarr;</span><br><tab/>$\color{black}s = (|\Delta \bar\mathbf x_m| / R) / \Delta t \quad [\mu m / \mu s]$</td></tr>
-	<tr id="s_tr7" ><td><canvas id="stat7"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val7"  class="val"></div></td><td>Growth-centroid distance <span style="color:#ff0">&#9679;</span><br><tab/>$\color{black}{d_g} = |\bar\mathbf x_g - \bar\mathbf x_m| / R \quad [\mu m]$</td></tr>
-	<tr id="s_tr8" ><td><canvas id="stat8"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val8"  class="val"></div></td><td>Centroid rotate speed<br><tab/>$\color{black}\omega = \arg(\Delta \bar\mathbf x_m) / \Delta t \quad [rad / \mu s]$</td></tr>
-	<tr id="s_tr9" ><td><canvas id="stat9"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val9"  class="val"></div></td><td>Growth-centroid rotate speed<br><tab/>$\color{black}{\omega_g} = \Delta \arg(\bar\mathbf x_g - \bar\mathbf x_m) / \Delta t \quad [rad / \mu s]$</td></tr>
-	<tr id="s_tr10"><td><canvas id="stat10" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val10" class="val"></div></td><td>Major axis rotate speed<br><tab/>$\color{black}{\omega_\theta} = \Delta (1/2 \arctan (^{2 \mu_{11}} / _{\mu_{20} - \mu_{02}}) ) / \Delta t \quad [rad / \mu s]$</td></tr>
-	<tr id="s_tr11"><td><canvas id="stat11" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val11" class="val"></div></td><td>Moment of inertia &sim; Hu's moment invariant 1 (log scale)<br><tab/>$\color{black}I \sim \varphi_1 = c_{11}$</td></tr>
-	<tr id="s_tr12"><td><canvas id="stat12" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val12" class="val"></div></td><td>Skewness &sim; Hu's 4 (log scale)<br><tab/>$\color{black}\gamma \sim \varphi_4 = c_{21}c_{12}$</td></tr>
-	<tr id="s_tr13"><td><canvas id="stat13" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val13" class="val"></div></td><td>Hu's 5 (log scale)<br><tab/>$\color{black}{\varphi_5} = \text{Re}(c_{30}c_{12}^3)$</td></tr>
-	<tr id="s_tr14"><td><canvas id="stat14" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val14" class="val"></div></td><td>Hu's 6 (log scale)<br><tab/>$\color{black}{\varphi_6} = \text{Re}(c_{20}c_{12}^2)$</td></tr>
-	<tr id="s_tr15"><td><canvas id="stat15" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val15" class="val"></div></td><td>Hu's 7 (log scale)<br><tab/>$\color{black}{\varphi_7} = \text{Im}(c_{30}c_{12}^3)$</td></tr>
-	<tr id="s_tr16"><td><canvas id="stat16" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val16" class="val"></div></td><td>Kurtosis &sim; Flusser's moment invariant 7<br><tab/>$\color{black}\kappa \sim \psi_7 = c_{22}$</td></tr>
-	<tr id="s_tr17"><td><canvas id="stat17" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val17" class="val"></div></td><td>Flusser's 8 (log scale)<br><tab/>$\color{black}{\psi_8} = \text{Re}(c_{31}c_{12}^2)$</td></tr>
-	<tr id="s_tr18"><td><canvas id="stat18" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val18" class="val"></div></td><td>Flusser's 9 (log scale)<br><tab/>$\color{black}{\psi_9} = \text{Im}(c_{31}c_{12}^2)$</td></tr>
-	<tr id="s_tr19"><td><canvas id="stat19" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val19" class="val"></div></td><td>Flusser's 10 (log scale)<br><tab/>$\color{black}{\psi_{10}} = \text{Re}(c_{40}c_{12}^4)$</td></tr>
+	<tr id="s_tr0" ><td><canvas id="stat0"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val0"  class="val"></div></td><td>Mass (log scale)<br><tab/>$\color{grey}m = \sum f(\mathbf x) / R^2 \quad [\mu g]$</td></tr>
+	<tr id="s_tr1" ><td><canvas id="stat1"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val1"  class="val"></div></td><td>Growth (log scale)<br><tab/>$\color{grey}g = \sum_{d>0} d(n(\mathbf x)) / R^2 \quad [\mu g / \mu s]$</td></tr>
+	<tr id="s_tr2" ><td><canvas id="stat2"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val2"  class="val"></div></td><td>Mass volume (log scale)<br><tab/>$\color{grey}V = \sum_{f>0} 1 / R^2 \quad [\mu m^2]$</td></tr>
+	<tr id="s_tr3" ><td><canvas id="stat3"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val3"  class="val"></div></td><td>Growth volume (log scale)<br><tab/>$\color{grey}{V_g} = \sum_{d>0} 1 / R^2 \quad [\mu m^2]$</td></tr>
+	<tr id="s_tr4" ><td><canvas id="stat4"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val4"  class="val"></div></td><td>Mass density<br><tab/>$\color{grey}\rho = m / V \quad [\mu g / \mu m^2]$</td></tr>
+	<tr id="s_tr5" ><td><canvas id="stat5"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val5"  class="val"></div></td><td>Growth density<br><tab/>$\color{grey}{\rho_g} = g / V_g \quad [\mu g / (\mu m^2 \cdot \mu s)]$</td></tr>
+	<tr id="s_tr6" ><td><canvas id="stat6"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val6"  class="val"></div></td><td>Centroid speed <span style="color:#f70">&#9679;&rarr;</span><br><tab/>$\color{grey}s = (|\Delta \bar\mathbf x_m| / R) / \Delta t \quad [\mu m / \mu s]$</td></tr>
+	<tr id="s_tr7" ><td><canvas id="stat7"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val7"  class="val"></div></td><td>Growth-centroid distance <span style="color:#ff0">&#9679;</span><br><tab/>$\color{grey}{d_g} = |\bar\mathbf x_g - \bar\mathbf x_m| / R \quad [\mu m]$</td></tr>
+	<tr id="s_tr8" ><td><canvas id="stat8"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val8"  class="val"></div></td><td>Centroid rotate speed<br><tab/>$\color{grey}\omega = \arg(\Delta \bar\mathbf x_m) / \Delta t \quad [rad / \mu s]$</td></tr>
+	<tr id="s_tr9" ><td><canvas id="stat9"  class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val9"  class="val"></div></td><td>Growth-centroid rotate speed<br><tab/>$\color{grey}{\omega_g} = \Delta \arg(\bar\mathbf x_g - \bar\mathbf x_m) / \Delta t \quad [rad / \mu s]$</td></tr>
+	<tr id="s_tr10"><td><canvas id="stat10" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val10" class="val"></div></td><td>Major axis rotate speed<br><tab/>$\color{grey}{\omega_\theta} = \Delta (1/2 \arctan (^{2 \mu_{11}} / _{\mu_{20} - \mu_{02}}) ) / \Delta t \quad [rad / \mu s]$</td></tr>
+	<tr id="s_tr11"><td><canvas id="stat11" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val11" class="val"></div></td><td>Moment of inertia &sim; Hu's moment invariant 1 (log scale)<br><tab/>$\color{grey}I \sim \varphi_1 = c_{11}$</td></tr>
+	<tr id="s_tr12"><td><canvas id="stat12" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val12" class="val"></div></td><td>Skewness &sim; Hu's 4 (log scale)<br><tab/>$\color{grey}\gamma \sim \varphi_4 = c_{21}c_{12}$</td></tr>
+	<tr id="s_tr13"><td><canvas id="stat13" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val13" class="val"></div></td><td>Hu's 5 (log scale)<br><tab/>$\color{grey}{\varphi_5} = \text{Re}(c_{30}c_{12}^3)$</td></tr>
+	<tr id="s_tr14"><td><canvas id="stat14" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val14" class="val"></div></td><td>Hu's 6 (log scale)<br><tab/>$\color{grey}{\varphi_6} = \text{Re}(c_{20}c_{12}^2)$</td></tr>
+	<tr id="s_tr15"><td><canvas id="stat15" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val15" class="val"></div></td><td>Hu's 7 (log scale)<br><tab/>$\color{grey}{\varphi_7} = \text{Im}(c_{30}c_{12}^3)$</td></tr>
+	<tr id="s_tr16"><td><canvas id="stat16" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val16" class="val"></div></td><td>Kurtosis &sim; Flusser's moment invariant 7<br><tab/>$\color{grey}\kappa \sim \psi_7 = c_{22}$</td></tr>
+	<tr id="s_tr17"><td><canvas id="stat17" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val17" class="val"></div></td><td>Flusser's 8 (log scale)<br><tab/>$\color{grey}{\psi_8} = \text{Re}(c_{31}c_{12}^2)$</td></tr>
+	<tr id="s_tr18"><td><canvas id="stat18" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val18" class="val"></div></td><td>Flusser's 9 (log scale)<br><tab/>$\color{grey}{\psi_9} = \text{Im}(c_{31}c_{12}^2)$</td></tr>
+	<tr id="s_tr19"><td><canvas id="stat19" class="stat" onclick="SelectStatObj(this)"></canvas></td><td><div id="val19" class="val"></div></td><td>Flusser's 10 (log scale)<br><tab/>$\color{grey}{\psi_{10}} = \text{Re}(c_{40}c_{12}^4)$</td></tr>
 	<tr><td colspan=3>Period candidates: <span id="txt_periods"></span></td></tr>
 	<!--
 	<tr><td>$I = \sum f \cdot |\mathbf x|^2 / R^2$<br>Moment of inertia</td><td></td></tr>
 	<tr><td>$\bar\mathbf x_c = \sum f \cdot \mathbf x / \sum f$<br>Center of mass</td><td></td></tr>
 	<tr><td><canvas id="s12" class="stat"></canvas></td><td></td><td>Gyration radius<br><tab/>$k = \sqrt{I/m} \quad \text{where } I = \sum f(\mathbf x) |\mathbf x|^2 / R^2$</td></tr>
-	<tr id="s_tr19" onclick="SelectStatObj(this)"><td><canvas id="stat19" class="stat"></canvas></td><td><div id="val19" class="val"></div></td><td>Flusser's 11 (log scale)<br><tab/>$\color{black}{\psi_{11}} = \text{Im}(c_{40}c_{12}^4)$</td></tr>
+	<tr id="s_tr19" onclick="SelectStatObj(this)"><td><canvas id="stat19" class="stat"></canvas></td><td><div id="val19" class="val"></div></td><td>Flusser's 11 (log scale)<br><tab/>$\color{grey}{\psi_{11}} = \text{Im}(c_{40}c_{12}^4)$</td></tr>
 	-->
 	</table>
 	</div>
@@ -913,14 +913,60 @@ var isKernelDrawn = false;
 var optColor = 1;  const GREY = 0, BLUE = 1, GREEN = 2, RAINBOW = 3; const LMARK = 11, MMARK = 12, DMARK = 13;
 const NEG_THRES = -0.8; //-0.8
 const NEG_COLORS = 4; //4
-const COLOR_ZERO = [15,15,15];
-const COLOR_NEG = [15,14,15];
-const COLOR_DOT = [12,12,13];
+const COLOR_ZERO = [0,0,0];
+const COLOR_NEG = [2,1,2];
+const COLOR_DOT = [1,1,3];
 const COLORS = [
-[ [13,13,13], [12,12,12], [11,11,11], [10,10,10], [9,9,9], [8,8,8], [7,7,7], [6,6,6], [5,5,5], [4,4,4], [1,1,1], /**/ [0,15,15], [0,9,15], [7,11,15] ],  // B/W
-[ [9,15,15], [6,13,15], [3,11,15], [0,9,15], [3,8,15], [6,7,15], [9,6,15], [11,4,15], [13,2,15], [15,0,15], [11,0,5], /**/ [15,15,0], [15,7,0], [15,11,7] ],  // blue
-[ [9,15,9], [7,13,7], [5,11,5], [3,10,3], [5,10,3], [8,10,1], [11,8,0], [13,6,3], [15,4,6], [15,2,9], [9,0,7], /**/ [0,15,15], [0,9,15], [7,11,15] ] ];  // green
-//[ [0,15,15], [0,7,15], [0,0,15], [0,7,7], [0,15,0], [7,15,0], [15,15,0], [15,7,0], [15,0,0], [15,0,7], [15,0,15], /**/ [15,15,0], [15,7,0], [15,11,7] ] ];  // rainbow
+[//B/W
+  [13,13,13],
+  [12,12,12],
+  [11,11,11],
+  [10,10,10],
+  [ 9, 9, 9],
+  [ 8, 8, 8],
+  [ 7, 7, 7],
+  [ 6, 6, 6],
+  [ 5, 5, 5],
+  [ 4, 4, 4],
+  [ 1, 1, 1],
+  /**/
+  [ 0,15,15],
+  [ 0, 9,15],
+  [ 7,11,15]
+],[//blue
+  [ 1, 1, 5],
+  [ 1, 4,14],
+  [ 3,11,15],
+  [ 6,13,15],
+  [ 9,15,15],
+  [ 9, 9,14],
+  [ 9, 6,15],
+  [11, 4,15],
+  [13, 2,15],
+  [15, 0,15],
+  [11, 0, 5],
+  /**/
+  [15,15, 0],
+  [15, 7, 0],
+  [15,11, 7]
+],[//green
+  [ 1, 6, 1],
+  [ 2, 9, 3],
+  [ 5,11, 5],
+  [ 7,13, 7],
+  [ 9,15, 9],
+  [ 8,10, 1],
+  [11, 8, 0],
+  [13, 6, 3],
+  [15, 4, 6],
+  [15, 2, 9],
+  [ 9, 0, 7],
+  /**/
+  [ 0,15,15],
+  [ 0, 9,15],
+  [ 7,11,15]
+//rainbow [ [ 0,15,15], [ 0, 7,15], [ 0, 0,15], [ 0, 7, 7], [ 0,15, 0], [ 7,15, 0], [15,15, 0], [15, 7, 0], [15, 0, 0], [15, 0, 7], [15, 0,15], /**/ [15,15, 0], [15, 7,0], [15,11, 7] ] ];
+]];
 
 //*** objects
 var field = null;
